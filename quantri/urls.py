@@ -1,16 +1,16 @@
-from django.urls import path,include
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 app_name = 'post'
 urlpatterns = [
-   
+
     # path('', views.blog, name= 'blog'),
     #  path('<int:id>/', views.postDetai, name= 'postDetai'),
     path('', views.home, name='home'),
     path('article_detail/<int:id>/', views.article_detail, name='article_detail'),  # Trang chi tiết bài viết
-    path('add_comment/<int:id>/', views.add_comment, name='add_comment'), 
+    path('add_comment/<int:id>/', views.add_comment, name='add_comment'),
     path('edit_comment/<int:comment_id>/', views.edit_comment, name='edit_comment'),
     path('delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),  # Xử lý thêm bình luận
     path('upload_avatar/', views.upload_avatar, name='upload_avatar'),
@@ -21,8 +21,8 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('forgot-password/', views.forgot_password, name='forgot_password'),
     path('reset_password/<int:user_id>/', views.reset_password, name='reset_password'),
-    path("logout/", views.logout_view , name = 'logout'),
-    path("edit_comment/", views.edit_comment , name = 'edit_comment'),
+    path("logout/", views.logout_view, name='logout'),
+    path("edit_comment/", views.edit_comment, name='edit_comment'),
     path('weather/', views.weather, name='weather'),
     path('notification/<int:id>/', views.notification, name='notification'),
     path('create_article/', views.create_article, name='create_article'),
@@ -30,7 +30,8 @@ urlpatterns = [
     path('delete_article/<int:article_id>/', views.delete_article, name='delete_article'),
     path('edit_article/<int:article_id>/', views.edit_article, name='edit_article'),
     path('display_notifications/', views.display_notifications, name='display_notifications'),
-    path('article_notifications/<int:article_id>/<int:feedback_id>/', views.article_notifications, name='article_notifications'),
+    path('article_notifications/<int:article_id>/<int:feedback_id>/', views.article_notifications,
+         name='article_notifications'),
     # path('delete_img/<int:img_id>/', views.delete_img, name='delete_img'),
     # path('delete_video/<int:video_id>/', views.delete_video, name='delete_video'),
     path('update_account/', views.update_account, name='update_account'),
@@ -45,17 +46,6 @@ urlpatterns = [
     path('videos_list/', views.videos_list, name='videos_list'),
     # path('price_list/', views.price_list, name='price_list'),
 
-
-
-    
-
-    
-   
-    
-
-    
- 
-    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
