@@ -83,16 +83,15 @@ WSGI_APPLICATION = 'webdoanDjango.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.mysql',
-       'NAME': 'doan3',
-       'USER': 'root',  # Tên người dùng MySQL
-       'PASSWORD': '',  # Mật khẩu của người dùng MySQL
-       'HOST': '127.0.0.1',  # Địa chỉ host của MySQL Server (thường là localhost)
-       'PORT': '3306',  # Cổng mặc định cho MySQL
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'umI1yL6rlaDF',
+        'HOST': 'ep-late-wood-06922183-pooler.us-east-1.postgres.vercel-storage.com',
+        # 'PORT': '',
     }
 }
-
 
 
 # Password validation
@@ -138,6 +137,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_admin")
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
